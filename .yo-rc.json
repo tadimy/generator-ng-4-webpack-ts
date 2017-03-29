@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Marlin",
+      "authorEmail": "toleranthink@gmail.com",
+      "authorUrl": "https://www.vaivei.com"
+    }
+  }
+}
