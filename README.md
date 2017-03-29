@@ -25,7 +25,7 @@ yo ng-4-webpack-ts
 
 ## License
 
-MIT © [Marlin](https://www.vaivei.com)
+MIT © [Marlin](https://github.com/tadimy/)
 
 
 [npm-image]: https://badge.fury.io/js/generator-ng-4-webpack-ts.svg

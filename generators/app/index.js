@@ -1,36 +1,35 @@
 'use strict';
-const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
 
-module.exports = class extends Generator {
+const Base = require('yeoman-generator');
+const MainGenerator = require('./generator');
+
+module.exports = class extends Base {
+  constructor(args, options, config) {
+    super(args, options, config);
+    this.generator = new MainGenerator(this);
+  }
+
+  initializing() {
+    this.pkg = require('../../package.json');
+  }
+
   prompting() {
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the unreal ' + chalk.red('generator-ng-4-webpack-ts') + ' generator!'
-    ));
-
-    const prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
-
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
-    });
+    this.generator.sayHello();
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
+    this.generator.writing();
+  }
+
+  promptUser() {
+    this.generator.promptUser();
   }
 
   install() {
-    this.installDependencies();
+    this.generator.install();
+  }
+
+  promptStylePreprocessor() {
+    this.generator.promptStylePreprocessor();
   }
 };
