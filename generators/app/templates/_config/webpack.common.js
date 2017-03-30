@@ -27,7 +27,7 @@ const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
     title: "<%= app %>",
-    description: 'Awesome ...',
+    description: "<%= projectDescription %>",
     baseUrl: '/',
     isDevServer: helpers.isWebpackDevServer()
 };
@@ -323,7 +323,6 @@ module.exports = function (options) {
              *  })
              *
              *  Means we can use it in the template like this:
-             *  <%= webpackConfig.htmlElements.headTags %>
              *
              * Dependencies: HtmlWebpackPlugin
              */
@@ -385,5 +384,4 @@ module.exports = function (options) {
         }
 
     }
-        ;
 };

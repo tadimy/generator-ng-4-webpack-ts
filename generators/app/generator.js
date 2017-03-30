@@ -32,6 +32,7 @@ module.exports = class MainGenerator {
       repoHostUrl: this.wrapper.repoHostUrl
     };
 
+    // Editor config
     this.wrapper.fs.copyTpl(
       this.wrapper.templatePath('_editorconfig'),
       this.wrapper.destinationPath('editorconfig'
@@ -40,6 +41,7 @@ module.exports = class MainGenerator {
         userNameSpace: _user.userNameSpace
       });
 
+    // Package.json
     this.wrapper.fs.copyTpl(
       this.wrapper.templatePath('_package.json'),
       this.wrapper.destinationPath('package.json'),
@@ -51,7 +53,23 @@ module.exports = class MainGenerator {
         repoHostUrl: _repoHostUrl.repoHostUrl,
         projectDescription: _app.projectDescription,
         homepage: _app.homepage
-      });
+      }
+    );
+    // Copy webpack default config
+    this.wrapper.fs.copyTpl(
+      this.wrapper.templatePath('_webpack.config.js'),
+      this.wrapper.destinationPath('webpack.config.js')
+    );
+
+    // Copy webpack configurations
+    this.wrapper.fs.copyTpl(
+      this.wrapper.templatePath('_config'),
+      this.wrapper.destinationPath('./config'),
+      {
+        app: _app.app,
+        projectDescription: _app.projectDescription
+      }
+    )
   }
 
   promptUser() {
@@ -183,11 +201,11 @@ module.exports = class MainGenerator {
   }
 
   install() {
-    this.wrapper.installDependencies({
-      skipInstall: this.wrapper.options['skip-install'],
-      yarn: true,
-      npm: false,
-      bower: false
-    });
+    // this.wrapper.installDependencies({
+    //   skipInstall: this.wrapper.options['skip-install'],
+    //   yarn: false,
+    //   npm: false,
+    //   bower: false
+    // });
   }
 };
