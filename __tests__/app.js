@@ -11,7 +11,8 @@ describe('generator-ng-4-webpack-ts:app', () => {
 
   it('creates files', () => {
     assert.file([
-      'dummyfile.txt'
+      'package.json',
+      'webpack.config.js'
     ]);
   });
 });

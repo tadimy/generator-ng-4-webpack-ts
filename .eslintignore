@@ -1,0 +1,6 @@
+node_modules
+coverage
+# IDE #
+.idea/
+*.swp
+generators/app/templates

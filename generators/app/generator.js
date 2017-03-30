@@ -69,7 +69,7 @@ module.exports = class MainGenerator {
         app: _app.app,
         projectDescription: _app.projectDescription
       }
-    )
+    );
   }
 
   promptUser() {
@@ -201,7 +201,7 @@ module.exports = class MainGenerator {
   }
 
   install() {
-    // this.wrapper.installDependencies({
+    // This.wrapper.installDependencies({
     //   skipInstall: this.wrapper.options['skip-install'],
     //   yarn: false,
     //   npm: false,

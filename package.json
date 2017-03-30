@@ -36,7 +36,7 @@
   },
   "scripts": {
     "prepublish": "nsp check",
-    "pretest": "eslint . --ignore-path .gitignore --fix",
+    "pretest": "eslint . --ignore-path .eslintignore --fix",
     "test": "jest"
   },
   "eslintConfig": {
