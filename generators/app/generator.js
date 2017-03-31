@@ -5,6 +5,8 @@ const chalk = require('chalk');
  *
  * @type {MainGenerator}
  */
+/*eslint no-undef: "error"*/
+/*eslint-env node*/
 module.exports = class MainGenerator {
   /** @namespace {string} props.repoHost */
   constructor(gen) {
@@ -71,17 +73,18 @@ module.exports = class MainGenerator {
       }
     );
     // Copy typescript configurations
-    let typescriptConfigs = {
+    let onlyCopy = {
       '_tsconfig.json': 'tsconfig.json',
       '_tslint.json': 'tslint.json',
       '_tsconfig.webpack.json': 'tsconfig.webpack.json',
-      '_typedoc.json': 'typedoc.json'
+      '_typedoc.json': 'typedoc.json',
+      _src: './src'
     };
-    for (let i in typescriptConfigs) {
-      if (Object.prototype.hasOwnProperty.call(typescriptConfigs, i)) {
+    for (let i in onlyCopy) {
+      if (Object.prototype.hasOwnProperty.call(onlyCopy, i)) {
         this.wrapper.fs.copy(
           this.wrapper.templatePath(i),
-          this.wrapper.destinationPath(typescriptConfigs[i])
+          this.wrapper.destinationPath(onlyCopy[i])
         );
       }
     }
@@ -216,11 +219,11 @@ module.exports = class MainGenerator {
   }
 
   install() {
-    // This.wrapper.installDependencies({
-    //   skipInstall: this.wrapper.options['skip-install'],
-    //   yarn: false,
-    //   npm: false,
-    //   bower: false
-    // });
+    this.wrapper.installDependencies({
+      skipInstall: this.wrapper.options['skip-install'],
+      yarn: true,
+      npm: false,
+      bower: false
+    });
   }
 };
