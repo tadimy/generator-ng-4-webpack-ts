@@ -2,8 +2,8 @@
 
 const Base = require('yeoman-generator');
 const MainGenerator = require('./generator');
-/*eslint no-undef: "error"*/
-/*eslint-env node*/
+/* eslint no-undef: "error" */
+/* eslint-env node */
 module.exports = class extends Base {
   constructor(args, options, config) {
     super(args, options, config);

@@ -11,10 +11,11 @@
   "files": [
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "index.js",
   "keywords": [
-    "",
-    "yeoman-generator"
+    "AngularJS 4",
+    "yeoman-generator",
+    "webpack"
   ],
   "devDependencies": {
     "eslint": "^3.18.0",

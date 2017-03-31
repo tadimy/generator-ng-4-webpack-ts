@@ -5,8 +5,8 @@ const chalk = require('chalk');
  *
  * @type {MainGenerator}
  */
-/*eslint no-undef: "error"*/
-/*eslint-env node*/
+/* eslint no-undef: "error" */
+/* eslint-env node */
 module.exports = class MainGenerator {
   /** @namespace {string} props.repoHost */
   constructor(gen) {
