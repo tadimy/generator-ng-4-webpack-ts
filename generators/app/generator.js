@@ -70,6 +70,19 @@ module.exports = class MainGenerator {
         projectDescription: _app.projectDescription
       }
     );
+    // Copy typescript configurations
+    let typescriptConfigs = {
+      '_tsconfig.json': 'tsconfig.json',
+      '_tslint.json': 'tslint.json',
+      '_tsconfig.webpack.json': 'tsconfig.webpack.json',
+      '_typedoc.json': 'typedoc.json'
+    };
+    for (let i in typescriptConfigs) {
+      this.wrapper.fs.copy(
+        this.wrapper.templatePath(i),
+        this.wrapper.destinationPath(typescriptConfigs[i])
+      );
+    }
   }
 
   promptUser() {
