@@ -3,3 +3,4 @@ coverage
 # IDE #
 .idea/
 *.swp
+/npm-debug.log
