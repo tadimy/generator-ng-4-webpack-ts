@@ -1,6 +1,8 @@
 # generator-ng-4-webpack-ts [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > 
 
+## Thank You
+[ng2-admin](https://github.com/akveo/ng2-admin)
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-ng-4-webpack-ts using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).

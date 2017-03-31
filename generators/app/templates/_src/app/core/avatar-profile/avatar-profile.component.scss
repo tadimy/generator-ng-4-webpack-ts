@@ -1,0 +1,45 @@
+@import '../../../styles/scss/vars';
+
+$height: 180px;
+$avatar-height: 70px;
+$avatar-border-width: 4px;
+$profile-line-height: 18px;
+$left: 30px;
+.profile-wall {
+  background: url('#{$assets-img-root}bg-profile.png') no-repeat fixed;
+  height: 180px;
+  > .profile-avatar {
+    height: 70px;
+    width: 70px;
+    top: ($height - ($avatar-border-width*2 + $avatar-height))/2;
+    position: absolute;
+    left: $left;
+    border-radius: 1000px;
+    vertical-align: bottom;
+    display: inline-block;
+    background-color: $color-general-component-bg;
+    &.img-bordered {
+      padding: 3px;
+      border: 1px solid $color-general-component-bg;
+    }
+    > img {
+      border: 0 none;
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+      vertical-align: middle;
+      border-radius: 1000px;
+    }
+  }
+  > .profile-info {
+    line-height: $profile-line-height;
+    position: absolute;
+    top: ($height - $profile-line-height)/2;
+    left: $left + ($avatar-height + $avatar-border-width*2) + 10px;
+    display: inline-block;
+    color: $color-general-font-color;
+  }
+  > .message-notify-icon {
+
+  }
+}

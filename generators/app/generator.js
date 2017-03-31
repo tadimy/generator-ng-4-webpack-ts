@@ -78,10 +78,12 @@ module.exports = class MainGenerator {
       '_typedoc.json': 'typedoc.json'
     };
     for (let i in typescriptConfigs) {
-      this.wrapper.fs.copy(
-        this.wrapper.templatePath(i),
-        this.wrapper.destinationPath(typescriptConfigs[i])
-      );
+      if (Object.prototype.hasOwnProperty.call(typescriptConfigs, i)) {
+        this.wrapper.fs.copy(
+          this.wrapper.templatePath(i),
+          this.wrapper.destinationPath(typescriptConfigs[i])
+        );
+      }
     }
   }
 
